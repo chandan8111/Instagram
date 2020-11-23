@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="instafirstclor">#3C43E5</color>
+    <color name="instacenterclord">#34267</color>
+    <color name="instalastclor">#f6ac35</color>
+    <color name="statusbarcolor"># CECECE</color>
+    <color name="textcolor">#464646</color>
+    <color name="icontint">#00363636</color>
 </resources>

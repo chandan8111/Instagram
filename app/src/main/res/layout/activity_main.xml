@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/white"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/camera" />
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bilbo_swash_caps"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10px"
+                android:layout_marginLeft="10px"
+                android:text="@string/app_name"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/instatv" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:tint="@color/textcolor"
+                app:srcCompat="@drawable/send" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -16,6 +74,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="-1dp"
         android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="selected"
         app:menu="@menu/bottom_nav_menu" />
 
     <fragment
@@ -23,23 +82,13 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/nav_view"
+        android:layout_below="@+id/toolbar"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation"
-        android:layout_below="@+id/toolbar"
-        android:layout_above="@+id/nav_view"
-        />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="@color/white"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        app:navGraph="@navigation/mobile_navigation" />
 
 </RelativeLayout>
